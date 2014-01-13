@@ -1,0 +1,14 @@
+@-o-keyframes prop-600 {
+    0%   { -o-transform: translateX(0px); }
+    100% { -o-transform: translateX(-681px); }
+}
+
+@-o-keyframes prop-1200 {
+    0%   { -o-transform: translateX(0px); }
+    100% { -o-transform: translateX(-1200px); }
+}
+
+@-o-keyframes hero-walk{
+	from {background-position: 0px;}
+	to {background-position: -344px;}
+}

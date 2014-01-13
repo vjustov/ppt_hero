@@ -1,0 +1,40 @@
+<section id="main" ng-controller="HeroCtrl">
+	<button type="button" class="btn btn-primary btn-lg" ng-click="tooglePushable(hero)" data-toggle="modal" data-target="#creationModal">Add another hero</button>
+	<ul>
+		<li ng-repeat="hero in heroesData">
+			<h4 class="heroname"><a href="#">{{hero.name}}</a></h4>,is my name. I am a {{hero.race}} from the highlands at the west, a fine {{hero.job}}, if you ask me, and
+			my mighty weapon is the {{hero.weapon}}
+			<button type="button" class="btn btn-primary" ng-show="hero.editable" ng-click="updateHero(hero)">Grabar</button>
+					<button type="button" class="btn btn-primary" ng-show="!hero.editable" ng-click="toogleEditable(hero)">Edit</button>
+					<button type="button" class="btn btn-danger" ng-click="deleteHero(hero.id)">Delete</button>
+		</li>
+	</ul>
+	<!-- Modal -->
+<div class="modal fade" id="creationModal" tabindex="-1" role="dialog" aria-labelledby="creationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="creationModalLabel">Add another hero</h4>
+      </div>
+      <div class="modal-body">
+      	what is your name?
+        <input class="form-control" type="text" ng-model="hero.name" ng-show="pushable"/>
+      	first of all, are you a boy or a girl?
+        <input class="form-control" type="text" ng-model="hero.sex" ng-show="pushable"/>
+        who are your ancestors?
+        <select class="form-control" ng-model="hero.race_id" ng-options="r.id as r.name for r in races" ng-show="pushable"/>
+        what is it that you are?
+        <select class="form-control" ng-model="hero.job_id" ng-options="j.id as j.name for j in jobs" ng-show="pushable"/>
+        Do you have a weapon?
+        <select class="form-control" ng-model="hero.weapon_id" ng-options="w.id as w.name for w in weapons" ng-show="pushable"/>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" ng-click="createHero(hero)" data-dismiss="modal" data-target="#creationModal">Save hero</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</section>

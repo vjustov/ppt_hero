@@ -1,0 +1,14 @@
+@-moz-keyframes prop-600 {
+    0%   { -moz-transform: translateX(0px); }
+    100% { -moz-transform: translateX(-681px); }
+}
+
+@-moz-keyframes prop-1200 {
+    0%   { -moz-transform: translateX(0px); }
+    100% { -moz-transform: translateX(-1200px); }
+}
+
+@-moz-keyframes hero-walk{
+	from {background-position: 0px;}
+	to {background-position: -344px;}
+}

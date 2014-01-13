@@ -1,0 +1,14 @@
+@-webkit-keyframes prop-600 {
+    0%   { -webkit-transform: translateX(0px); }
+    100% { -webkit-transform: translateX(-681px); }
+}
+
+@-webkit-keyframes prop-1200 {
+    0%   { -webkit-transform: translateX(1200px); }
+    100% { -webkit-transform: translateX(0px); }
+}
+
+@-webkit-keyframes hero-walk{
+	from {background-position: 0px;}
+	to {background-position: -344px;}
+}
