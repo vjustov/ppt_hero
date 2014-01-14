@@ -44,16 +44,18 @@
 
     </div>
     <!-- Add your site or application content here -->
-    <div class="container">
+    <div class="container header">
     <div class="header">
       <ul class="nav nav-pills pull-right" ng-controller="MainCtrl">
         <li ng-repeat="role in roles"><a ng-href="/#/{{role}}" >{{role}}</a></li>
       </ul>
-      <h3 class="text-muted">ppt_hero</h3>
+      <h3 class="text-muted"><a href="/"> ppt_hero </a> </h3>
     </div>
   </div>
     <div class="alert alert-info" ng-show="status">{{status}}</div>
-    <div id="main-container" class="container" ng-view=""></div>
+    <div class="container" ng-view=""></div>
+
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>

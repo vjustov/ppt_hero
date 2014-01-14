@@ -4,8 +4,14 @@
 }
 
 @-webkit-keyframes prop-1200 {
-    0%   { -webkit-transform: translateX(1200px); }
-    100% { -webkit-transform: translateX(0px); }
+    0%   { -webkit-transform: translateX(0px); }
+    100% { -webkit-transform: translateX(-1200px); }
+}
+
+
+@-webkit-keyframes prop-1500 {
+    0%   { -webkit-transform: translateX(0px); }
+    100% { -webkit-transform: translateX(-1527px); }
 }
 
 @-webkit-keyframes hero-walk{

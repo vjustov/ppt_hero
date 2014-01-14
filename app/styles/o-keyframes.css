@@ -8,6 +8,12 @@
     100% { -o-transform: translateX(-1200px); }
 }
 
+
+@-o-keyframes prop-1500 {
+    0%   { -o-transform: translateX(0px); }
+    100% { -o-transform: translateX(-1527px); }
+}
+
 @-o-keyframes hero-walk{
 	from {background-position: 0px;}
 	to {background-position: -344px;}

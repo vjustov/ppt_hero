@@ -92,6 +92,21 @@ angular.module('pptHeroApp')
                     });
             }
 
+            $scope.changeSex = function() {
+                $scope.hero.sex = $scope.sex == 'male' ? 'fem' : 'male'
+            };
+
+            $scope.changeRace = function(direction) {
+                var races = $scope.races.map(function(race) {
+                    return race.name
+                });
+                var direction = direction == 'next' ? 1 : -1;
+
+                $scope.race = races[races.indexOf($scope.race) + direction];
+                debugger;
+                $scope.hero.race_id = $scope.races[races.indexOf($scope.race) + direction].id;
+            };
+
             $scope.createHero = function(hero) {
                 heroFactory.createHero(hero)
                     .success(function() {

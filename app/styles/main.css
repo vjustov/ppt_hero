@@ -37,8 +37,9 @@ body {
   display:inline-block;
 }
 
-#main-container, #main{
+ #main, .header{
   z-index: 11;
+  position: relative;
 }
 
 #background div{
@@ -48,11 +49,6 @@ position: absolute;
 -ms-animation-iteration-count: infinite;
 -o-animation-iteration-count: infinite;
 animation-iteration-count: infinite;
-/*-webkit-animation-timing-function: linear;
--moz-animation-timing-function: linear;
--ms-animation-timing-function: linear;
--o-animation-timing-function: linear;
-animation-timing-function: linear;*/
 }
 
 #sky div{
@@ -62,6 +58,16 @@ animation-timing-function: linear;*/
     -ms-animation-name: prop-1200;
     -o-animation-name: prop-1200;
     animation-name: prop-1200;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    transition-timing-function: linear;
 }
 
 #sky .cloud-1{
@@ -127,6 +133,16 @@ bottom: 85px;
     -ms-animation-name: prop-600;
     -o-animation-name: prop-600;
     animation-name: prop-600;
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    transition-timing-function: linear;
 }
 #horizon .hor-bg-1{
     bottom: 100px; left: -30px;
@@ -143,16 +159,16 @@ bottom: 85px;
     bottom: 50px; left: -420px;
     height: 270px;
     background: url(../images/horizon/2.png) repeat-x;
-    -webkit-animation-duration: 60s;
-    -moz-animation-duration: 60s;
-    -ms-animation-duration: 60s;
-    -o-animation-duration: 60s;
-    animation-duration: 60s;
+    -webkit-animation-duration: 50s;
+    -moz-animation-duration: 50s;
+    -ms-animation-duration: 50s;
+    -o-animation-duration: 50s;
+    animation-duration: 50s;
     z-index: 2;
 }
 
 #horizon .hor-bg-3{
-    bottom: 10px; 545px; left: -260px;
+    bottom: 10px; left: -260px;
     height: 270px;
     background: url(../images/horizon/3.png) repeat-x;
     -webkit-animation-duration: 30s;
@@ -178,11 +194,22 @@ bottom: 85px;
   bottom: -10px; 
     height: 270px; width: 4581px;
     background: url(../images/floor.png) repeat-x;
-    -webkit-animation-name: prop-600;
-    -moz-animation-name: prop-600;
-    -ms-animation-name: prop-600;
-    -o-animation-name: prop-600;
-    animation-name: prop-600;
+
+    -webkit-animation-timing-function: linear;
+    -moz-animation-timing-function: linear;
+    -ms-animation-timing-function: linear;
+    -o-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-animation-name: prop-1500;
+    -moz-animation-name: prop-1500;
+    -ms-animation-name: prop-1500;
+    -o-animation-name: prop-1500;
+    animation-name: prop-1500;
     -webkit-animation-duration: 30s;
     -moz-animation-duration: 30s;
     -ms-animation-duration: 30s;
@@ -191,7 +218,7 @@ bottom: 85px;
     z-index: 4;
 }
 
-#hero{
+#hero, .hero{
   bottom:190px; left:100px;
   width:43px;
   height: 43px;
@@ -208,6 +235,24 @@ bottom: 85px;
   animation: hero-walk .8s steps(8) infinite;
 }
 
+.hero{
+  position: absolute;
+  top: 35px; left: 270px;
+-webkit-animation-iteration-count: infinite;
+-moz-animation-iteration-count: infinite;
+-ms-animation-iteration-count: infinite;
+-o-animation-iteration-count: infinite;
+animation-iteration-count: infinite;
+}
+
+.arrow-left{
+  float: left;
+  margin-right: 50px;
+}
+
+.arrow-right{
+  float: right;
+}
 /* Customize container */
 @media (min-width: 768px) {
   .container {
