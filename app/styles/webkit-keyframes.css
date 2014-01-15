@@ -11,7 +11,7 @@
 
 @-webkit-keyframes prop-1500 {
     0%   { -webkit-transform: translateX(0px); }
-    100% { -webkit-transform: translateX(-1527px); }
+    100% { -webkit-transform: translateX(-1800px); }
 }
 
 @-webkit-keyframes hero-walk{

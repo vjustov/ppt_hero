@@ -11,7 +11,7 @@
 
 @-o-keyframes prop-1500 {
     0%   { -o-transform: translateX(0px); }
-    100% { -o-transform: translateX(-1527px); }
+    100% { -o-transform: translateX(-1800px); }
 }
 
 @-o-keyframes hero-walk{

@@ -38,6 +38,7 @@ angular.module('pptHeroApp')
                         $scope.status = 'Unable to create race' + error.message;
                     });
                 $scope.tooglePushable();
+                $scope.race = {};
             };
 
             $scope.updateRace = function(race) {

@@ -38,6 +38,7 @@ angular.module('pptHeroApp')
                         $scope.status = 'Unable to create job: ' + error.message;
                     });
                 $scope.tooglePushable();
+                $scope.job = {};
             };
 
             $scope.updateJob = function(job) {

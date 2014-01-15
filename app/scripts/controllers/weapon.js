@@ -38,6 +38,7 @@ angular.module('pptHeroApp')
                         $scope.status = 'Unable to create weapon: ' + error.message;
                     });
                 $scope.tooglePushable();
+                $scope.weapon = {};
             };
 
             $scope.updateWeapon = function(weapon) {

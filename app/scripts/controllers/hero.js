@@ -13,12 +13,21 @@ angular.module('pptHeroApp')
             $scope.editable;
             getHeroes();
 
+            $scope.hero;
+            $scope.sex;
+            $scope.race;
+
             $scope.tooglePushable = function() {
                 $scope.pushable = !$scope.pushable;
+                $scope.hero = {};
             }
 
-            $scope.toogleEditable = function(hero) {
-                hero.editable = !hero.editable;
+            $scope.edit = function(hero) {
+                $scope.hero = hero;
+                $scope.race = $scope.races.filter(function(race) {
+                    return race.id == hero.race_id;
+                })[0].name;
+                $scope.hero.editable = true;
             }
 
             function mergeData(heroes, weapons, jobs, races) {
@@ -93,7 +102,7 @@ angular.module('pptHeroApp')
             }
 
             $scope.changeSex = function() {
-                $scope.hero.sex = $scope.sex == 'male' ? 'fem' : 'male'
+                $scope.hero.sex = $scope.hero.sex == 'Male' ? 'Female' : 'Male'
             };
 
             $scope.changeRace = function(direction) {
@@ -101,21 +110,25 @@ angular.module('pptHeroApp')
                     return race.name
                 });
                 var direction = direction == 'next' ? 1 : -1;
-
-                $scope.race = races[races.indexOf($scope.race) + direction];
-                debugger;
-                $scope.hero.race_id = $scope.races[races.indexOf($scope.race) + direction].id;
+                var index = races.indexOf($scope.race) + direction;
+                if (index >= 0 && index < races.length) {
+                    $scope.race = races[index];
+                    $scope.hero.race_id = $scope.races[index].id;
+                }
             };
 
             $scope.createHero = function(hero) {
                 heroFactory.createHero(hero)
                     .success(function() {
+                        getHeroes();
                         $scope.status = 'Created hero! Refreshing hero guild.';
-                        $scope.heroes.push(hero);
+                        // $scope.heroes.push(hero);
                     })
                     .error(function(error) {
                         $scope.status = 'Unable to create hero: ' + error.message;
-                    })
+                    });
+                $scope.tooglePushable();
+                $scope
             };
 
             $scope.updateHero = function(hero) {
@@ -124,22 +137,19 @@ angular.module('pptHeroApp')
                 heroFactory.editHero(hero)
                     .success(function() {
                         $scope.status = 'Updated hero!. Refreshing Hero list.'
+                        getHeroes();
                     })
                     .error(function(error) {
                         $scope.status = 'Unable to update hero: ' + error.message;
                     });
-                $scope.toogleEditable(hero);
+                $scope.hero = {};
             };
 
             $scope.deleteHero = function(id) {
                 heroFactory.deleteHero(id)
                     .success(function() {
                         $scope.status = 'Deleted hero! Refreshing hero list.';
-                        $scope.heroes.forEach(function(hero, index) {
-                            if (hero.id == id) {
-                                $scope.heroes.splice(index, 1);
-                            }
-                        });
+                        getHeroes();
                     })
                     .error(function(error) {
                         $scope.status = 'Unable to delete hero: ' + error.message;
